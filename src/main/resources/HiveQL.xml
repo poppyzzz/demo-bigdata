@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<queries>
+	<hql schema="etl" tableName="etl_nsrxx" discription="创建ETL_NSRXX">
+
+create table if not exists etl.ETL_NSRXX
+(
+NSRDZDAH     STRING, 
+WSPZXH      STRING, 
+NSRSBH      STRING, 
+NSRBM      STRING,
+NSRMC      STRING, 
+FDDBRMC      STRING, 
+FRZJLX_DM    STRING,
+FRZJLX_MC    STRING,
+ZJHM      STRING, 
+SCJYDZ      STRING, 
+BSRMC      STRING, 
+DHHM      STRING, 
+LSGX_DM      STRING, 
+HY_DM      STRING, 
+DJZCLX_DM    STRING, 
+HZDJRQ      STRING, 
+QYKJZD_DM    STRING, 
+SWDJBLX_DM    STRING, 
+SWDJZLX_DM    STRING, 
+NSRZT_DM    STRING, 
+ZGSWRY_DM    STRING, 
+JDXZ_DM      STRING, 
+ZZSNSRLX_DM    STRING, 
+GSYLB_DM    STRING, 
+NSRXYDJ_DM    STRING, 
+QYGM_DM      STRING, 
+CYLX_DM      STRING, 
+XZQH_YSFPBL_DM  STRING, 
+HGDM      STRING,
+ZJG_BZ      STRING,
+NSR_SWJG_DM    STRING, 
+SWJG_DM      STRING, 
+LRR_DM      STRING, 
+LRRQ      STRING, 
+XGR_DM      STRING, 
+XGRQ      STRING, 
+GSZGSWJG_J_DM  STRING, 
+LSSWDJLX_DM    STRING, 
+DWXZ_DM      STRING, 
+GGHBZ      STRING, 
+ZZJG_DM      STRING,
+SHXYDM          STRING,
+OLD_NSRSBH		STRING,
+KZZTDJLX_DM		STRING,
+xyjb		STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+
+	<hql schema="etl" tableName="etl_nsrkz" discription="创建ETL_NSRKZ">
+
+create table if not exists etl.ETL_NSRKZ
+(
+NSRDZDAH    STRING,
+NSRMC_YW     STRING,
+GSHBZ      STRING, 
+FRBZ      STRING, 
+ZCDZ      STRING, 
+ZCD_YB      STRING, 
+SCJYD_YB    STRING, 
+DYDZ      STRING, 
+GSKYRQ      STRING, 
+HSXS_DM      STRING, 
+BSR_ZJLX_DM    STRING, 
+BSR_ZJHM    STRING, 
+JSJDJDM      STRING, 
+GSDJJG_MC    STRING, 
+ZZLB_DM      STRING, 
+GSDJZZH      STRING, 
+YXQ_Q      STRING, 
+YXQ_Z      STRING, 
+ZY        STRING, 
+JY        STRING, 
+JYFS      STRING, 
+SCJYQX_Q    STRING, 
+SCJYQX_Z    STRING, 
+GSFZRQ      STRING, 
+ZCZB      DOUBLE, 
+ZCBZ_DM      STRING, 
+TZZE      DOUBLE, 
+TZBZ_DM      STRING, 
+CYRS      DOUBLE, 
+WJRS      DOUBLE, 
+YZZZ      STRING, 
+ZGDW      STRING, 
+JYFWDW      STRING, 
+ZJGYB      STRING, 
+PZJG      STRING, 
+PZWH      STRING, 
+PZRQ      STRING, 
+ZHZCQK      STRING, 
+CJQ_Q      STRING, 
+CJQ_Z      STRING, 
+HWCFC      STRING, 
+HWCFDMJ      STRING, 
+CWFZRMC      STRING, 
+CWBBZL      STRING, 
+GDZCZJFS    STRING, 
+YHPTXFF      STRING, 
+KJND      STRING, 
+JZBWB_DM    STRING, 
+JZLB      STRING, 
+JZFS      STRING, 
+JZRQ      STRING, 
+FZRQ      STRING, 
+NSR_SWJG_DM    STRING, 
+SWJG_DM      STRING, 
+LRR_DM      STRING, 
+LRRQ      STRING, 
+XGR_DM      STRING, 
+XGRQ      STRING, 
+HYMX_DM      STRING, 
+BGLY      STRING, 
+ZCD_DHHM    STRING, 
+HSFS_DM      STRING, 
+SYKJZD_DM    STRING, 
+WZWZ      STRING, 
+FR_DHHM      STRING, 
+FR_YDDHHM    STRING, 
+FR_DYDZ      STRING, 
+CWFZR_ZJLX_DM  STRING, 
+CWFZR_ZJHM    STRING, 
+CWFZR_DHHM    STRING, 
+CWFZR_YDDHHM  STRING, 
+CWFZR_DYDZ    STRING, 
+BSR_DHHM    STRING, 
+BSR_YDDHHM  STRING, 
+BSR_DYDZ		 STRING, 
+SWDLRMC			 STRING, 
+SWDLR_NSRSBH	 STRING, 
+SWDLR_DHHM		 STRING, 
+SWDLR_DYDZ		 STRING, 
+DSZGSWJG_J_DM	 STRING, 
+DSZGSWJG_DM		 STRING, 
+HHRS			 DOUBLE, 
+GDRS			 DOUBLE, 
+ZRRTZBL			 DOUBLE, 
+WZTZBL			 DOUBLE, 
+GYTZBL			 DOUBLE, 
+FBZL			 STRING, 
+FSHY1_DM		 STRING, 
+FSHY2_DM		 STRING, 
+FSHY3_DM		 STRING, 
+JYFW			 STRING, 
+KYSLRQ			 STRING, 
+NSYWFSRQ		 STRING, 
+LGHBZ			 STRING, 
+LHBZBZ			 STRING, 
+XYSBZ			 STRING, 
+ZSZZSYDWBZ		 STRING, 
+FSHY1_HYMX_DM	 STRING, 
+FSHY2_HYMX_DM	 STRING, 
+FSHY3_HYMX_DM	 STRING, 
+JDCXSQYBZ		 STRING, 
+SFCLGJXZJZHY	 STRING, 
+DQYGLCJ_DM		 STRING, 
+HYFPZKPQY		 STRING, 
+SFWTLXGNSR		 STRING, 
+SCJYDLXDH		 STRING, 
+BSRXM			 STRING, 
+ZCZBBZY_DM		 STRING, 
+ZCZBBZE_DM		 STRING, 
+ZCZBBZS_DM		 STRING, 
+ZCZBBZYJE		 DOUBLE, 
+ZCZBBZEJE		 DOUBLE, 
+ZCZBBZSJE		 DOUBLE, 
+TZZEBZY_DM		 STRING, 
+TZZEBZE_DM		 STRING, 
+TZZEBZS_DM		 STRING, 
+TZZEBZYJE		 DOUBLE, 
+TZZEBZEJE		 DOUBLE, 
+TZZEBZSJE		 DOUBLE, 
+ZZJGLX_DM        STRING, 
+ZFJGLX_DM        STRING,
+ygznsrlx_dm      string    
+)
+STORED AS PARQUETFILE
+	</hql>
+	
+	<hql schema="etl" tableName="etl_nsrrd" discription="创建ETL_NSRRD">
+
+create table if not exists etl.ETL_NSRRD
+(
+NSRDZDAH		STRING, 
+NSRZG_DM		STRING, 
+WSPZXH			STRING, 
+RDRQ			STRING, 
+YXQ_Q			STRING, 
+YXQ_Z			STRING, 
+DKBZ			STRING, 
+ZZSRDJB_DM		STRING, 
+NSR_SWJG_DM		STRING, 
+SWJG_DM			STRING, 
+LRR_DM			STRING, 
+LRRQ			STRING, 
+XGR_DM			STRING, 
+XGRQ			STRING,
+QXBZ			STRING  
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="etl" tableName="etl_hy" discription="创建ETL_HY">
+
+create table if not exists etl.ETL_HY
+(
+HY_DM			STRING, 
+HY_MC			STRING, 
+HY_JC			STRING, 
+HYDL_DM			STRING, 
+XYBZ			STRING, 
+YXBZ			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="etl" tableName="etl_hymx" discription="创建ETL_HYMX">
+
+create table if not exists etl.ETL_HYMX
+(
+HYMX_DM			STRING, 
+HYMX_MC			STRING, 
+HYMX_JC			STRING, 
+HYDL_DM			STRING, 
+YXBZ			STRING,
+XYBZ			STRING,
+HY_DM			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="etl" tableName="etl_hydl" discription="创建ETL_HYDL">
+
+create table if not exists etl.ETL_HYDL
+(
+HYDL_DM			STRING, 
+HYDL_MC			STRING, 
+HYDL_JC			STRING, 
+HYML_DM			STRING, 
+YXBZ			STRING,
+XYBZ			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="etl" tableName="etl_hyml" discription="创建ETL_HYML">
+
+create table if not exists etl.ETL_HYML
+(
+HYML_DM			STRING, 
+HYML_MC			STRING, 
+HYML_JC			STRING, 
+YXBZ			STRING,
+XYBZ			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="etl" tableName="etl_swjg" discription="创建ETL_SWJG">
+
+create table if not exists etl.ETL_SWJG
+(
+SWJG_DM			STRING, 
+SWJG_MC			STRING, 
+SWJG_JC			STRING, 
+SWJG_BZ			STRING, 
+SJ_SWJG_DM			STRING,
+NSR_SWJG_BZ			STRING, 
+JGJC_DM			STRING, 
+SWJG_JG			STRING, 
+SWJG_YB			STRING, 
+SWJG_DZ			STRING,
+SWJG_DH			STRING		
+)
+STORED AS PARQUETFILE
+
+	</hql><hql schema="etl" tableName="etl_jxfp" discription="创建进项发票ETL表">
+create table if not exists etl.ETL_JXFP  
+(  
+JXFP_ID    STRING     comment '主键',
+FPDM       STRING     comment '发票代码',
+FPHM       STRING     comment '发票号码',
+FP_LB      STRING     comment '发票类别',
+JE         DOUBLE       comment '金额',
+SL         DOUBLE       comment '税率',
+SE	       DOUBLE       comment '税额',
+XF_NSRSBH  STRING	    comment '销方纳税人识别号',
+XF_NSRMC   STRING	    comment '销方纳税人名称',
+GF_NSRSBH  STRING	comment '购方纳税人识别号',
+GF_NSRMC   STRING	comment '购方纳税人名称',
+KPRQ       STRING  	comment '开票日期',
+RZSJ       STRING  	comment '认证时间',
+SWJG_DM    STRING		comment '税务机关代码',
+CZSJ       STRING		comment '操作时间',
+GF_SWJG_DM STRING		comment '购方税务机关代码',
+XF_SWJG_DM STRING		comment '销方税务机关代码',
+ZFBZ       STRING		comment '作废标志',
+SKM        STRING	comment '密码区',
+SHRSBH     STRING	comment '收货人纳税人识别号',
+SHRMC      STRING	comment '收货人名称',
+FHRSBH     STRING	comment '发货人纳税人识别号',
+FHRMC      STRING	comment '发货人名称',
+QYD        STRING	comment '启运地、经由、到达地',
+SKPH       STRING	comment '机器编号，税控盘号',
+JSHJ       DOUBLE	comment '价税合计',
+CZCH       STRING	comment '车种车号',
+CCDW       STRING	comment '车船吨位',
+YSHWXX     STRING	comment '运输货物信息',
+BZ         STRING	comment '备注',
+TSPZBZ	   STRING		comment '特殊票种标志',
+ZFSJ	   STRING        comment '作废时间'
+)
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="etl" tableName="etl_jxfp_qd" discription="创建进项发票ETL清单表">
+create table if not exists etl.ETL_JXFP_QD 
+(  
+JXFPQD_ID  STRING       comment '主键：FPDM+ FPHM+KPRQ+QDBZ+ID',
+JXFP_ID    STRING       comment '主表ID：FPDM+ FPHM+KPRQ',
+HH		   DOUBLE		comment '物品行号：物品行号',
+FP_LB      STRING       comment '发票类别',
+WP_MC      STRING     	comment '物品名称',
+WP_DW      STRING       comment '物品单位',
+WP_XH      STRING       comment '物品型号',
+WP_SL      DOUBLE    	comment '物品数量',
+DJ         DOUBLE       comment '单价',
+JE         DOUBLE       comment '金额',
+SL         DOUBLE       comment '税率',
+SE	       DOUBLE       comment '税额',
+RZSJ       STRING		comment '认证时间：认证时间YYYY-MM-DD',
+CZSJ       STRING		comment '操作时间：载入数据时间',
+KPRQ       STRING		comment '报税日期',
+QDBZ       STRING		comment '清单标志',
+SKPH       STRING		comment '机器编号（机动车发票）',
+SFZHM	   STRING		comment '身份证号码/组织机构代码（机动车发票）',
+CD		   STRING		comment '产地（机动车发票）',
+HGZS       STRING		comment '合格证书，合格证号（机动车发票）',
+JKZMSH     STRING		comment '进口证明书号（机动车发票）',
+SJDH       STRING		comment '商检单号（机动车发票）',
+FDJHM      STRING		comment '发动机号码（机动车发票）',
+CJHM       STRING		comment '车辆识别号/车架号（机动车发票）',
+DH         STRING		comment '电话（机动车发票）',
+ZH         STRING		comment '账号（机动车发票）',
+KHYH       STRING		comment '开户银行（机动车发票）',
+DW         STRING		comment '吨位（机动车发票）',
+XCRS       STRING		comment '限乘人数（机动车发票）',
+JSHJ       DOUBLE		comment '价税合计（机动车发票）',
+SPBM	   STRING		comment '商品编码'
+)
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="etl" tableName="etl_xxfp" discription="创建销项发票ETL表">
+create table if not exists etl.ETL_XXFP 
+(  
+XXFP_ID    STRING       comment '主键',
+FPDM       STRING       comment '发票代码',
+FPHM       STRING       comment '发票号码',
+FP_LB      STRING       comment '发票类别',
+ZFBZ	   STRING	comment '作废标志',
+ZFSJ	   STRING	comment '作废时间',
+JE         DOUBLE       comment '金额',
+SL         DOUBLE       comment '税率',
+SE	  	   DOUBLE       comment '税额',
+GF_SWJG_DM STRING	comment '购方税务机关代码',
+XF_SWJG_DM STRING	comment '销方税务机关代码',
+XF_NSRSBH  STRING	comment '销方纳税人识别号',
+XF_NSRMC   STRING       comment '销方纳税人名称',
+GF_NSRSBH  STRING	comment '购方纳税人识别号',
+GF_NSRMC   STRING	comment '购方纳税人名称',
+KPRQ       STRING	comment '开票日期',
+BSYF       DOUBLE       comment '报税月份',
+BSSJ       STRING       comment '报税时间',
+SFSJWZ     STRING       comment '是否数据完整',
+CZSJ       STRING		comment '操作时间',
+SKM        STRING       comment '密码区',
+SHRSBH     STRING       comment '收货人纳税人识别号',
+SHRMC      STRING       comment '收货人名称',
+FHRSBH     STRING       comment '发货人纳税人识别号',
+FHRMC      STRING       comment '发货人名称',
+QYD        STRING       comment '启运地、经由、到达地',
+SKPH	   STRING       comment '机器编号，税控盘号',
+JSHJ       DOUBLE	comment '价税合计',
+CZCH 	   STRING       comment '车种车号',
+CCDW	   STRING       comment '车船吨位',
+YSHWXX     STRING       comment '运输货物信息',
+BZ	   	   STRING       comment '备注',
+BLBZ       STRING        comment '补录标志',
+TSPZBZ	   STRING		comment '特殊票种标志'
+)  
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="etl" tableName="etl_xxfp_qd" discription="创建销项发票ETL清单表">
+create table if not exists etl.ETL_XXFP_QD 
+(  
+XXFPQD_ID	STRING       comment '主键',
+XXFP_ID		STRING       comment '主表ID',
+HH			DOUBLE	     comment '物品行号',
+FP_LB       STRING       comment '发票类别',
+WP_MC		STRING       comment '物品名称',
+WP_XH		STRING       comment '物品型号',
+WP_DW		STRING       comment '物品单位',
+WP_SL		DOUBLE	     comment '物品数量',
+DJ		    DOUBLE	     comment '单价',
+JE			DOUBLE       comment '金额',
+SL			DOUBLE       comment '税率',
+SE			DOUBLE	     comment '税额',
+BSYF		DOUBLE       comment '报税月份',
+BSSJ		STRING       comment '报税时间',
+CZSJ		STRING       comment '操作时间',
+FPDM		STRING       comment '发票代码',
+FPHM		STRING       comment '发票号码',
+WP_LB		STRING       comment '物品类别',
+KPRQ		STRING       comment '开票日期',
+QDBZ		STRING		 comment '清单标志：00非清单，01清单',
+SKPH		STRING       comment '机器编号',
+SFZHM		STRING       comment '身份证号码',
+CD			STRING       comment '产地',
+HGZS		STRING       comment '合格证书，合格证号',
+JKZMSH		STRING       comment '进口证明书号',
+SJDH		STRING       comment '商检单号',
+FDJHM		STRING       comment '发动机号码',
+CJHM		STRING       comment '车辆识别号/车架号',
+DH			STRING       comment '电话',
+ZH			STRING       comment '账号',
+KHYH		STRING       comment '开户银行',
+DW			STRING       comment '吨位',
+XCRS		STRING       comment '限乘人数',
+JSHJ		DOUBLE       comment '价税合计',
+SPBM	   STRING		comment '商品编码'
+) 
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="dw" tableName="dw_dim_hy" discription="创建DW_DIM_HY">
+
+create table if not exists dw.DW_DIM_HY
+(
+HY_KEY			STRING,
+HY_DM			STRING,
+HY_MC			STRING, 
+HYMX_DM			STRING, 
+HYMX_MC			STRING, 
+YXBZ			STRING,
+HYDL_DM			STRING,
+HYDL_MC			STRING,
+HYML_DM			STRING,
+HYML_MC			STRING,
+MLDM			STRING,
+MLMC			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="dw" tableName="dw_dim_swjg" discription="创建DW_DIM_SWJG">
+
+create table if not exists dw.DW_DIM_SWJG
+(
+SWJG_KEY			STRING, 
+REGION_KEY		STRING, 
+SWZJ_DM			STRING, 
+SWZJ_MC			STRING,
+SJGS_DM			STRING,
+SJGS_MC			STRING, 
+SJGS_JC			STRING,
+DSJGS_DM			STRING, 
+DSJGS_MC			STRING,
+DSJGS_JC			STRING, 
+XQJGS_DM			STRING,
+XQJGS_MC			STRING, 
+XQJGS_JC			STRING,
+XZJGS_DM			STRING, 
+XZJGS_MC			STRING,
+XZJGS_JC			STRING, 
+ZJGS_DM			STRING,
+ZJGS_MC			STRING, 
+ZJGS_JC			STRING,
+BY1_DM			STRING, 
+BY1_MC			STRING,
+BY1_JC			STRING, 
+BY2_DM			STRING,
+BY2_MC			STRING, 
+BY2_JC			STRING,
+SWJG_DM			STRING, 
+SWJG_MC			STRING,
+SWJG_JC			STRING, 
+SWJG_BZ			STRING     comment '税务机关标志  0为机关 ，1为 部门 ',
+JGJC_DM			STRING     comment '税务机关标志  00 为国税局，11 省局， 31 市局， 41 区县，51 61 ',
+CZRQ			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="dw" tableName="dw_dim_swjg_jc" discription="创建DW_DIM_SWJG_JC">
+
+create table if not exists dw.DW_DIM_SWJG_JC
+(
+SJSWJG_KEY			STRING, 
+SJSWJG_DM			STRING, 
+SJSWJG_MC			STRING, 
+SJSWJG_JC			STRING,
+SJSWJG_BZ			STRING, 
+XJSWJG_KEY			STRING,
+XJSWJG_DM			STRING, 
+XJSWJG_MC			STRING,
+XJSWJG_JC			STRING, 
+XJSWJG_BZ			STRING,
+SWJGLEVEL			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	
+	<hql schema="dw" tableName="dw_dim_date" discription="创建DW_DIM_DATE">
+
+create table if not exists dw.DW_DIM_DATE
+(
+DATE_KEY			BIGINT, 
+ND			STRING, 
+YF			STRING, 
+NY			DOUBLE, 
+ND_MC			STRING, 
+YF_MC			STRING,
+NY_MC			STRING
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	
+	<hql schema="dw" tableName="dw_dim_nsr" discription="创建DW_DIM_NSR">
+
+		create table if not exists dw.DW_DIM_NSR
+		(
+		NSR_KEY			STRING  	comment '纳税人KEY', 
+		NSRSBH			STRING  	comment '纳税人识别号',
+		NSRMC			STRING  	comment '纳税人名称',
+		FDDBR_MC		STRING  	comment '法定代表人', 
+		FRZJHM			STRING  	comment '法人证件及号码',
+		DHHM			STRING  	comment '电话号码',
+		CWLXR			STRING  	comment '财务联系人',  
+		SWJG_KEY		STRING  	comment '税务机关KEY', 
+		HYMX_DM			STRING  	comment '行业明细名称',
+		JYFW			STRING  	comment '经营范围', 
+		SCJYDZ			STRING  	comment '生产经营地址', 
+		CYRS			DOUBLE  	comment '从业人数', 
+		ZCZB			DOUBLE  	comment '注册资本', 
+		DJZCLX_DM		STRING  	comment '登记注册类型名称',
+		KYDJRQ			STRING	  	comment '开业登记日期', 
+		NSRZG_DM		STRING  	comment '纳税人资格名称',
+		RDRQ			STRING  		comment '认定日期',
+		QXRQ			STRING  		comment '取消日期', 
+		HY_KEY			STRING 	    comment '行业KEY',
+		REGION_KEY			STRING 	    comment '地区KEY',
+		NSRDZDAH			STRING 	    comment '纳税人电子档案号',
+		NSRZT_DM			STRING 	    comment '纳税人状态代码',
+		CWFZR_ZJHM			STRING 	    comment '财务负责人证件号码',
+		CZSJ			STRING  		comment '操作时间',
+		KYSLRQ			STRING		comment '开业受理日期',
+		ZFJGLX_DM		STRING		comment '总分机构类型代码',
+		FRZJLX_DM               STRING      comment '法人证件类型代码',
+		FRZJLX_MC               STRING      comment '法人证件类型名称',		
+		DKBZ				    STRING        comment '代开标志',
+		ygznsrlx_dm             string,
+		xyjb             string
+		)
+		STORED AS PARQUETFILE
+		
+
+	</hql>
+	<hql schema="dw" tableName="dw_dim_region" discription="dw_dim_region">
+create table if not exists dw.dw_dim_region
+(  
+region_key string,
+sjmc 	string,
+sjdm 	string,
+bjmc 	string,
+bjdm 	string,
+wdbz 	string
+)
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="dw" tableName="dw_fact_jxfp" discription="创建DW_FACT_JXFP">
+
+create table if not exists dw.dw_fact_jxfp
+(
+JXFP_KEY	     	  STRING  	    comment '主键',
+GF_SWJG_KEY     	  STRING		comment '购方税务机关代码',
+XF_SWJG_KEY			  STRING		comment '销方税务机关代码',
+DATE_KEY	          BIGINT  	    comment '开票日期',
+GF_NSR_KEY            STRING	    comment '购方纳税人识别号',
+XF_NSR_KEY	          STRING	    comment '销方纳税人识别号',
+FP_LB	              STRING        comment '发票类别',
+JXFP_ID	              STRING  	    comment '主键',
+FPDM	     		  STRING        comment '发票代码',
+FPHM      			  STRING        comment '发票号码',
+JE     			      DOUBLE        comment '金额',
+SL      			  DOUBLE        comment '税率',
+SE	       			  DOUBLE        comment '税额',		
+DKBZ				  STRING        comment '代开标志',
+RZRQ				  STRING  	comment '认证时间',
+XF_NSRMC  			  STRING	    comment '销方纳税人名称',	
+GF_NSRMC  			  STRING	comment '购方纳税人名称',		
+CZSJ				  STRING		comment '操作时间',
+XF_NSRSBH			  STRING	    comment '销方纳税人识别号',	
+GF_NSRSBH			  STRING	comment '购方纳税人识别号',	
+KPRQ				  STRING  	comment '开票日期',
+RZYF				  DOUBLE       comment '认证月份',
+GF_SWJG_DM 			  STRING		comment '购方税务机关代码',
+XF_SWJG_DM 			  STRING		comment '销方税务机关代码',
+SKM      			  STRING	comment '密码区',
+SHRSBH    		 	  STRING	comment '收货人纳税人识别号',
+SHRMC     			  STRING	comment '收货人名称',
+FHRSBH    	 		  STRING	comment '发货人纳税人识别号',
+FHRMC     			  STRING	comment '发货人名称',	
+QYD      			  STRING	comment '启运地、经由、到达地',
+SKPH      			  STRING	comment '机器编号，税控盘号',
+JSHJ      			  DOUBLE	comment '价税合计',
+CZCH       			  STRING	comment '车种车号',
+CCDW        		  STRING	comment '车船吨位',
+YSHWXX    			  STRING	comment '运输货物信息',
+BZ            		  STRING	comment '备注',
+TSPZBZ	   STRING		comment '特殊票种标志'
+)
+STORED AS PARQUETFILE
+	</hql>
+
+	<hql schema="dw" tableName="dw_fact_xxfp" discription="创建DW_FACT_XXFP">
+
+		create table if not exists dw.dw_fact_xxfp
+		(
+		XXFP_KEY	     	  STRING  	    comment '主键',
+		GF_SWJG_KEY     	  STRING		comment '购方税务机关代码',
+		XF_SWJG_KEY			  STRING		comment '销方税务机关代码',
+		DATE_KEY	          BIGINT  	    comment '开票日期',
+		GF_NSR_KEY            STRING	    comment '购方纳税人识别号',
+		XF_NSR_KEY	          STRING	    comment '销方纳税人识别号',
+		DKBZ				  STRING		comment '代开标志',
+		FP_LB	              STRING        comment '发票类别',
+		JE     			      DOUBLE        comment '金额',
+		SL      			  DOUBLE        comment '税率',
+		SE	       			  DOUBLE        comment '税额',	
+		ZFBZ				  STRING        comment '作废标志',
+		XF_NSRMC  			  STRING	    comment '销方纳税人名称',	
+		GF_NSRMC  			  STRING	comment '购方纳税人名称',		
+		KPRQ      			  STRING	   comment '开票日期',	
+		XXFP_ID	 			  STRING       comment '主键',
+		FPDM      			  STRING       comment '发票代码',
+		FPHM     			  STRING       comment '发票号码',	
+		BSSJ      			  STRING       comment '报税时间',	
+		XF_NSRSBH  			  STRING	comment '销方纳税人识别号',
+		GF_NSRSBH  			  STRING	comment '购方纳税人识别号',
+		SKM       			  STRING       comment '密码区',
+		SHRSBH    			  STRING       comment '收货人纳税人识别号',
+		SHRMC     			  STRING       comment '收货人名称',
+		FHRSBH    			  STRING       comment '发货人纳税人识别号',
+		FHRMC     			  STRING       comment '发货人名称',
+		QYD       			  STRING       comment '启运地、经由、到达地',
+		SKPH	  			  STRING       comment '机器编号，税控盘号',
+		JSHJ      			  DOUBLE	   comment '价税合计',
+		CZCH 	  			  STRING       comment '车种车号',
+		CCDW	  			  STRING       comment '车船吨位',
+		YSHWXX    			  STRING       comment '运输货物信息',
+		BZ	   	  			  STRING       comment '备注',
+		TSPZBZ				  STRING	   comment '特殊票种标志'
+		)
+		STORED AS PARQUETFILE
+	</hql>
+	
+	<hql schema="dw" tableName="dw_fact_xxfpmx" discription="创建销项发票dw清单表">
+create table if not exists dw.DW_FACT_XXFPMX 
+(
+DATE_KEY	          BIGINT  	    comment '开票日期',
+GF_NSR_KEY            STRING	    comment '购方纳税人识别号',
+XF_NSR_KEY	          STRING	    comment '销方纳税人识别号',
+FP_LB       STRING       comment '发票类别',
+WP_MC		STRING       comment '物品名称',
+WP_DW		STRING       comment '物品单位',
+WP_XH		STRING       comment '物品型号',
+WP_SL		DOUBLE	     comment '物品数量',
+DJ		    DOUBLE	     comment '单价',
+JE			DOUBLE       comment '金额',
+SL			DOUBLE       comment '税率',
+SE			DOUBLE	     comment '税额',
+FPDM		STRING       comment '发票代码',
+FPHM		STRING       comment '发票号码',
+XXFP_ID		STRING       comment '主表ID',
+ZFBZ				  STRING        comment '作废标志',
+KPRQ      			  STRING	   comment '开票日期',
+XF_NSRMC  			  STRING	    comment '销方纳税人名称',	
+GF_NSRMC  			  STRING	comment '购方纳税人名称',
+QDBZ       STRING		comment '清单标志',
+BSSJ		STRING       comment '报税时间',
+HH			DOUBLE	     comment '物品行号',
+XXFPMX_ID	STRING,
+XF_NSRSBH  			  STRING	comment '销方纳税人识别号',
+GF_NSRSBH  			  STRING	comment '购方纳税人识别号',
+XXFPMX_KEY	STRING,
+GF_SWJG_KEY     	  STRING		comment '购方税务机关代码',
+XF_SWJG_KEY			  STRING		comment '销方税务机关代码',
+DKBZ		STRING		 comment '代开标志',
+WP_LB		STRING       comment '物品类别',
+SKPH		STRING       comment '机器编号',
+SFZHM		STRING       comment '身份证号码',
+CD			STRING       comment '产地',
+HGZS		STRING       comment '合格证书，合格证号',
+JKZMSH		STRING       comment '进口证明书号',
+SJDH		STRING       comment '商检单号',
+FDJHM		STRING       comment '发动机号码',
+CJHM		STRING       comment '车辆识别号/车架号',
+DH			STRING       comment '电话',
+ZH			STRING       comment '账号',
+KHYH		STRING       comment '开户银行',
+DW			STRING       comment '吨位',
+XCRS		STRING       comment '限乘人数',
+JSHJ		DOUBLE       comment '价税合计',
+SPBM	    STRING		 comment '商品编码'
+
+) 
+STORED AS PARQUETFILE
+	</hql>
+	
+	<hql schema="dw" tableName="dw_fact_jxfpmx" discription="创建进项发票fact清单表">
+create table if not exists dw.DW_FACT_JXFPMX 
+(
+JXFPMX_KEY    STRING       comment '主键：FPDM+ FPHM+KPRQ+QDBZ+ID',
+GF_SWJG_KEY     	  STRING		comment '购方税务机关代码',
+XF_SWJG_KEY			  STRING		comment '销方税务机关代码',
+DATE_KEY	          BIGINT  	    comment '开票日期',
+GF_NSR_KEY            STRING	    comment '购方纳税人识别号',
+XF_NSR_KEY	          STRING	    comment '销方纳税人识别号',
+FP_LB       STRING       comment '发票类别',
+WP_MC		STRING       comment '物品名称',
+WP_DW		STRING       comment '物品单位',
+WP_XH		STRING       comment '物品型号',
+WP_SL		DOUBLE	     comment '物品数量',
+DJ		    DOUBLE	     comment '单价',
+JE			DOUBLE       comment '金额',
+SL			DOUBLE       comment '税率',
+SE			DOUBLE	     comment '税额',
+JXFP_ID		STRING       comment '主表ID',
+FPDM		STRING       comment '发票代码',
+FPHM		STRING       comment '发票号码',
+XF_NSRMC  			  STRING	    comment '销方纳税人名称',	
+GF_NSRMC  			  STRING	comment '购方纳税人名称',
+DKBZ				  STRING        comment '代开标志',
+RZRQ				  STRING  	comment '认证时间',
+CZSJ       STRING		comment '操作时间：载入数据时间',
+HH			DOUBLE	     comment '物品行号',
+JXFPMX_ID	STRING       comment 'FPDM+ FPHM+KPRQ+QDBZ+ID',
+XF_NSRSBH  			  STRING	comment '销方纳税人识别号',
+GF_NSRSBH  			  STRING	comment '购方纳税人识别号',
+QDBZ       STRING		comment '清单标志',
+SKPH		STRING       comment '机器编号',
+SFZHM		STRING       comment '身份证号码',
+CD			STRING       comment '产地',
+HGZS		STRING       comment '合格证书，合格证号',
+JKZMSH		STRING       comment '进口证明书号',
+SJDH		STRING       comment '商检单号',
+FDJHM		STRING       comment '发动机号码',
+CJHM		STRING       comment '车辆识别号/车架号',
+DH			STRING       comment '电话',
+ZH			STRING       comment '账号',
+KHYH		STRING       comment '开户银行',
+DW			STRING       comment '吨位',
+XCRS		STRING       comment '限乘人数',
+JSHJ		DOUBLE       comment '价税合计',
+SPBM	    STRING		 comment '商品编码',
+KPRQ	    STRING	     comment '开票日期'
+) 
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="dw" tableName="dw_agg_jxfx_wp" discription="创建DW_AGG_JXFX_WP">
+
+create table if not exists dw.DW_AGG_JXFX_WP
+(
+DATE_KEY     BIGINT	                    comment '日期key',
+GF_NSR_KEY   STRING	                    comment '购方纳税人key',
+GF_SWJG_KEY  STRING	                    comment '购方税务机关key',
+XF_NSR_KEY   STRING	                    comment '销方纳税人key',
+XF_SWJG_KEY  STRING	                    comment '销方税务机关key',
+FP_LB        STRING         		    comment '发票类别',
+WP_MC        STRING        		        comment '物品名称',
+WP_DW        STRING        		        comment '物品单位',
+WP_SL        DOUBLE	            	    comment '物品数量',
+JE           DOUBLE	                    comment '金额',
+SE           DOUBLE	                    comment '税额',
+SL           DOUBLE                     comment '税率',
+FPFS         BIGINT	                    comment '发票份数',
+XF_NSRMC	 STRING						comment '销方纳税人名称',
+SPBM	   STRING		comment '商品编码'
+)	
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="dw" tableName="dw_agg_jxfx_swjg" discription="创建DW_AGG_JXFX_SWJG">
+create table if not exists dw.DW_AGG_JXFX_SWJG
+(
+DATE_KEY     BIGINT	                   comment '日期key',
+GF_NSR_KEY   STRING	          	  	   comment '购方纳税人key',
+GF_SWJG_KEY  STRING	                   comment '购方税务机关key',
+XF_SWJG_KEY  STRING	                   comment '销方税务机关key',
+FP_LB        STRING          		   comment '发票类别',
+XFHS         BIGINT	                   comment '销方户数',
+JE	         DOUBLE	                   comment '金额',
+SE           DOUBLE	                   comment '税额',
+FPFS         BIGINT	                   comment '发票份数'
+)
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="dw" tableName="dw_agg_jxfx_nsr" discription="创建DW_AGG_JXFX_NSR">
+
+create table if not exists dw.DW_AGG_JXFX_NSR
+(
+DATE_KEY     BIGINT	                  comment '日期key',
+GF_NSR_KEY   STRING	                  comment '购方纳税人key',
+GF_SWJG_KEY  STRING	                  comment '购方税务机关key', 
+XF_NSR_KEY   STRING	                  comment '销方纳税人key',
+DKBZ		 STRING					  comment '代开标志',
+XF_SWJG_KEY  STRING	                  comment '销方税务机关key',
+FP_LB        STRING             	  comment '发票类别',
+WP_SL        DOUBLE	     	          comment '物品数量',   
+JE           DOUBLE	                  comment '金额', 
+SE           DOUBLE	                  comment '税额',
+SL           DOUBLE                   comment '税率',
+FPFS         BIGINT	                  comment '发票份数',
+XF_NSRMC	 STRING					  comment '销方纳税人名称'
+)
+STORED AS PARQUETFILE
+	</hql>
+	<hql schema="dw" tableName="dw_agg_xxfx_wp" discription="创建DW_AGG_XXFX_WP">
+
+create table if not exists dw.DW_AGG_XXFX_WP
+(
+DATE_KEY     BIGINT	                    comment '日期key',
+GF_NSR_KEY   STRING	                    comment '购方纳税人key',
+GF_SWJG_KEY  STRING	                    comment '购方税务机关key',
+XF_NSR_KEY   STRING	                    comment '销方纳税人key',
+XF_SWJG_KEY  STRING	                    comment '销方税务机关key',
+FP_LB        STRING          	   	    comment '发票类别',
+WP_MC        STRING        		        comment '物品名称',
+WP_DW        STRING       		        comment '物品单位',
+WP_SL        DOUBLE	                    comment '物品数量',
+JE           DOUBLE	                    comment '金额',
+SE           DOUBLE	                    comment '税额',
+SL	         DOUBLE                     comment '税率',
+FPFS         BIGINT	                    comment '发票份数',
+GF_NSRMC	 STRING						comment '购方纳税人名称',
+SPBM	   STRING		comment '商品编码'
+)
+STORED AS PARQUETFILE
+
+	</hql>
+	<hql schema="dw" tableName="dw_agg_xxfx_swjg" discription="创建DW_AGG_XXFX_SWJG">
+
+create table if not exists dw.DW_AGG_XXFX_SWJG
+(
+DATE_KEY     BIGINT	                    comment '日期key',
+GF_SWJG_KEY  STRING	                    comment '购方税务机关key',
+XF_NSR_KEY   STRING	                    comment '销方纳税人key',
+XF_SWJG_KEY  STRING	                    comment '销方税务机关key',
+FP_LB        STRING            		    comment '发票类别',
+GFHS         BIGINT	                    comment '购方户数',
+XFHS         BIGINT	                    comment '销方户数',
+JE           DOUBLE	                    comment '金额',
+SE           DOUBLE	                    comment '税额',
+FPFS         BIGINT	                    comment '发票份数'
+)
+STORED AS PARQUETFILE
+
+	</hql>
+
+	<hql schema="dw" tableName="dw_agg_xxfx_nsr" discription="创建DW_AGG_XXFX_NSR">
+create table if not exists dw.DW_AGG_XXFX_NSR
+(
+DATE_KEY     BIGINT	                    comment '日期key',
+GF_NSR_KEY   STRING	                    comment '购方纳税人key',
+GF_SWJG_KEY  STRING	                    comment '购方税务机关key',
+XF_NSR_KEY   STRING	                    comment '销方纳税人key',
+DKBZ		 STRING					  	comment '代开标志',
+XF_SWJG_KEY  STRING	                    comment '销方税务机关key',
+FP_LB        STRING                     comment '发票类别', 
+WP_SL        DOUBLE	                    comment '物品数量',
+JE           DOUBLE	                    comment '金额',
+SE           DOUBLE	                    comment '税额',
+SL           DOUBLE                     comment '税率',
+FPFS         BIGINT	                    comment '发票份数',
+GF_NSRMC	 STRING						comment '购方纳税人名称'
+)
+STORED AS PARQUETFILE
+
+	</hql>
+    
+</queries>

@@ -1,0 +1,33 @@
+set hive.auto.convert.join=false;
+insert into dw.dw_hbase_nsr
+select xx.nsrsbh rowkey,map('nsrdzdah',COALESCE(xx.nsrdzdah,''),'wspzxh',COALESCE(xx.wspzxh,''),'nsrsbh',COALESCE(xx.nsrsbh,''),
+'nsrmc',COALESCE(xx.nsrmc,''),'fddbrmc',COALESCE(xx.fddbrmc,''),'frzjlx_dm',COALESCE(xx.frzjlx_dm,''),'frzjlx_mc',COALESCE(xx.frzjlx_mc,''),'zjhm',COALESCE(xx.zjhm,''),
+'scjydz',COALESCE(xx.scjydz,''),'bsrmc',COALESCE(xx.bsrmc,''),'dhhm',COALESCE(xx.dhhm,''),'lsgx_dm',COALESCE(xx.lsgx_dm,''),
+'hy_dm',COALESCE(xx.hy_dm,''),'djzclx_dm',COALESCE(xx.djzclx_dm,''),'hzdjrq',COALESCE(cast(  xx.hzdjrq as string) ,''),
+'qykjzd_dm',COALESCE(xx.qykjzd_dm,''),'swdjblx_dm',COALESCE(xx.swdjblx_dm,''),'swdjzlx_dm',COALESCE(xx.swdjzlx_dm,''),
+'nsrzt_dm',COALESCE(xx.nsrzt_dm,''),'zgswry_dm',COALESCE(xx.zgswry_dm,''),'jdxz_dm',COALESCE(xx.jdxz_dm,''),
+'zzsnsrlx_dm',COALESCE(xx.zzsnsrlx_dm,''),'gsylb_dm',COALESCE(xx.gsylb_dm,''),'nsrxydj_dm',COALESCE(xx.nsrxydj_dm,''),
+'qygm_dm',COALESCE(xx.qygm_dm,''),'cylx_dm',COALESCE(xx.cylx_dm,''),'xzqh_ysfpbl_dm',COALESCE(xx.xzqh_ysfpbl_dm,''),
+'hgdm',COALESCE(xx.hgdm,''),'zjg_bz',COALESCE(xx.zjg_bz,''),'nsr_swjg_dm',COALESCE(xx.nsr_swjg_dm,''),
+'swjg_dm',COALESCE(xx.swjg_dm,''),'lrr_dm',COALESCE(xx.lrr_dm,''),'lrrq',COALESCE(cast(xx.lrrq as string),''),'xgr_dm',COALESCE(xx.xgr_dm,''),
+'xgrq',COALESCE(cast(xx.xgrq as string),''),'gszgswjg_j_dm',COALESCE(xx.gszgswjg_j_dm,''),'lsswdjlx_dm',COALESCE(xx.lsswdjlx_dm,''),
+'dwxz_dm',COALESCE(xx.dwxz_dm,''),'gghbz',COALESCE(xx.gghbz,''),'zzjg_dm',COALESCE(xx.zzjg_dm,''),'shxydm',COALESCE(xx.shxydm,''),'kzztdjlx_dm',COALESCE(xx.kzztdjlx_dm,'')) nsrxx,
+map() nsrkz,
+map() nsrrd,
+map() ckts,
+map('hy_key',COALESCE(h.hy_key,''),'hy_dm',COALESCE(h.hy_dm,''),'hy_mc',COALESCE(h.hy_mc,''),'hymx_dm',COALESCE(h.hymx_dm,''),
+'hymx_mc',COALESCE(h.hymx_mc,''),'yxbz',COALESCE(h.yxbz,''),'hydl_dm',COALESCE(h.hydl_dm,''),'hydl_mc',COALESCE(h.hydl_mc,''),
+'hyml_dm',COALESCE(h.hyml_dm,''),'hyml_mc',COALESCE(h.hyml_mc,''),'mldm',COALESCE(h.mldm,''),'mlmc',COALESCE(h.mlmc,'')) hy,
+map() fppz,
+map('swjg_key',COALESCE(xx.nsr_swjg_dm,''),'region_key',COALESCE(s.region_key,''),'swzj_dm',COALESCE(s.swzj_dm,''),
+'swzj_mc',COALESCE(s.swzj_mc,''),'sjgs_dm',COALESCE(s.sjgs_dm,''),'sjgs_mc',COALESCE(s.sjgs_mc,''),'sjgs_jc',COALESCE(s.sjgs_jc,''),
+'dsjgs_dm',COALESCE(s.dsjgs_dm,''),'dsjgs_mc',COALESCE(s.dsjgs_mc,''),'dsjgs_jc',COALESCE(s.dsjgs_jc,''),'xqjgs_dm',COALESCE(s.xqjgs_dm,''),
+'xqjgs_mc',COALESCE(s.xqjgs_mc,''),'xqjgs_jc',COALESCE(s.xqjgs_jc,''),'xzjgs_dm',COALESCE(s.xzjgs_dm,''),'xzjgs_mc',COALESCE(s.xzjgs_mc,''),
+'xzjgs_jc',COALESCE(s.xzjgs_jc,''),'zjgs_dm',COALESCE(s.zjgs_dm,''),'zjgs_mc',COALESCE(s.zjgs_mc,''),'zjgs_jc',COALESCE(s.zjgs_jc,''),
+'by1_dm',COALESCE(s.by1_dm,''),'by1_mc',COALESCE(s.by1_mc,''),'by1_jc',COALESCE(s.by1_jc,''),'by2_dm',COALESCE(s.by2_dm,''),
+'by2_mc',COALESCE(s.by2_mc,''),'by2_jc',COALESCE(s.by2_jc,''),'swjg_dm',COALESCE(s.swjg_dm,''),'swjg_mc',COALESCE(s.swjg_mc,''),
+'swjg_jc',COALESCE(s.swjg_jc,''),'czrq',COALESCE(cast(s.czrq as string),'')) swjg,
+map() region,
+from_unixtime(unix_timestamp(),'yyyy-MM-dd') czsj 
+from etl.etl_nsrxx xx left join dw.dw_dim_swjg s on xx.nsr_swjg_dm = s.swjg_key left join dw.dw_dim_hy h on xx.hy_dm = h.hy_key where xx.nsrsbh is not null;
+set hive.auto.convert.join=true;
