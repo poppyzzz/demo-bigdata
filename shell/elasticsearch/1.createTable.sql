@@ -1,4 +1,4 @@
-create table if not exists yh_dw.dw_jxfp (
+create table if not exists es.dw_jxfp (
     id string,
     fplb string,
     fplbmc string,
@@ -31,7 +31,7 @@ create table if not exists yh_dw.dw_jxfp (
     wdbz string
 );
 
-create table if not exists yh_dw.dw_jxfpmx(
+create table if not exists es.dw_jxfpmx(
     row_id bigint,
     id string ,
     jxfpid string,
@@ -72,7 +72,7 @@ create table if not exists yh_dw.dw_jxfpmx(
     wdbz string
 );
 
-create table if not exists yh_dw.dw_xxfp
+create table if not exists es.dw_xxfp
 (
     id string ,
     xxfpid string,
@@ -103,7 +103,7 @@ create table if not exists yh_dw.dw_xxfp
     wdbz string
 );
 
-create table if not exists yh_dw.dw_xxfpmx(
+create table if not exists es.dw_xxfpmx(
     row_id bigint,
     id string,
     fplb string,
@@ -142,7 +142,7 @@ create table if not exists yh_dw.dw_xxfpmx(
     wdbz string
 );
 
-create table if not exists yh_dw.dw_fplyd(
+create table if not exists es.dw_fplyd(
     id string ,
     fplb string ,
     fplbmc string ,
@@ -170,7 +170,7 @@ create table if not exists yh_dw.dw_fplyd(
     dqdm string
 );
 
-create table if not exists yh_dw.dw_fplyd_mx(
+create table if not exists es.dw_fplyd_mx(
     id string,
     fplb string,
     fplbmc string,
@@ -207,7 +207,7 @@ create table if not exists yh_dw.dw_fplyd_mx(
 );
 
 
-create table if not exists yh_dw.dw_fplxd (
+create table if not exists es.dw_fplxd (
     id string,
     fplb string,
     fplbmc string,
@@ -234,7 +234,7 @@ create table if not exists yh_dw.dw_fplxd (
     mldm string
 );
 
-create table if not exists yh_dw.dw_fplxd_mx(
+create table if not exists es.dw_fplxd_mx(
     id string,
     fplb string,
     fplbmc string,
@@ -269,7 +269,7 @@ create table if not exists yh_dw.dw_fplxd_mx(
 );
 
 
-create table if not exists yh_dw.dw_hwl_jx(
+create table if not exists es.dw_hwl_jx(
     id string,
     wpmc string,
     je string,
@@ -283,7 +283,7 @@ create table if not exists yh_dw.dw_hwl_jx(
     datekey string
 );
 
-create table if not exists yh_dw.dw_hwl_xx(
+create table if not exists es.dw_hwl_xx(
     id string,
     wpmc string,
     je string,
@@ -297,7 +297,7 @@ create table if not exists yh_dw.dw_hwl_xx(
     datekey string
 );
 
-create table if not exists yh_dw.dw_jxxcy_jx(
+create table if not exists es.dw_jxxcy_jx(
     id string,
     wpmc string,
     je string,
@@ -311,7 +311,7 @@ create table if not exists yh_dw.dw_jxxcy_jx(
     datekey string
 );
 
-create table if not exists yh_dw.dw_jxxcy_xx(
+create table if not exists es.dw_jxxcy_xx(
     id string,
     wpmc string,
     je string,
@@ -327,7 +327,7 @@ create table if not exists yh_dw.dw_jxxcy_xx(
 
 
 
-create table if not exists yh_dw.dw_zgkpxe(
+create table if not exists es.dw_zgkpxe(
     ID string,
     fplb string,
     fplbmc string,
@@ -348,7 +348,7 @@ create table if not exists yh_dw.dw_zgkpxe(
     datekey  string       
 );
 
-create table if not exists yh_dw.dw_zgkpxe_mx(
+create table if not exists es.dw_zgkpxe_mx(
     id string,
     fplb string,
     fplbmc string,
@@ -377,7 +377,7 @@ create table if not exists yh_dw.dw_zgkpxe_mx(
 );
 
 
-create table if not exists yh_dw.dw_xxfp_zf
+create table if not exists es.dw_xxfp_zf
 (
     id string ,
     xxfpid string,
@@ -407,7 +407,7 @@ create table if not exists yh_dw.dw_xxfp_zf
     swjglevel string
 );
 
-create table if not exists yh_dw.dw_xxfpmx_zf(
+create table if not exists es.dw_xxfpmx_zf(
     id string,
     fplb string,
     fplbmc string,
@@ -445,7 +445,7 @@ create table if not exists yh_dw.dw_xxfpmx_zf(
 
 );
 
-create table if not exists yh_dw.dw_skfp
+create table if not exists es.dw_skfp
 (
     id string ,
     xxfpid string,
@@ -476,7 +476,7 @@ create table if not exists yh_dw.dw_skfp
     rzjg string
 );
 
-create table if not exists yh_dw.dw_skfpmx(
+create table if not exists es.dw_skfpmx(
     id string,
     fplb string,
     fplbmc string,
@@ -515,7 +515,7 @@ create table if not exists yh_dw.dw_skfpmx(
 );
 
 
-create table if not exists yh_dw.dw_jxfp_zf (
+create table if not exists es.dw_jxfp_zf (
     id string,
     fplb string,
     fplbmc string,
@@ -549,7 +549,7 @@ create table if not exists yh_dw.dw_jxfp_zf (
 );
 
 
-create table if not exists yh_dw.dw_jxfpmx_zf(
+create table if not exists es.dw_jxfpmx_zf(
     id string ,
     jxfpid string,
     fplb string ,

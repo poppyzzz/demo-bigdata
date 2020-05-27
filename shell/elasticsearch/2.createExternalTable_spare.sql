@@ -1,5 +1,5 @@
-drop table if exists yh_es.dw_xxfp_es_spare;
-create external table if not exists yh_es.dw_xxfp_es_spare(
+drop table if exists es.dw_xxfp_es_spare;
+create external table if not exists es.dw_xxfp_es_spare(
     id string ,
     xxfpid string,
     fplb string ,
@@ -37,8 +37,8 @@ TBLPROPERTIES('es.resource' = 'xxfp_spare.list/list','es.mapping.id' = 'id',
               'es.batch.write.refresh' = 'false','es.nodes.discovery' = 'true','es.nodes.client.only' = 'false'
               );
 
-drop table if exists yh_es.dw_xxfpmx_es_spare;
-create external table if not exists yh_es.dw_xxfpmx_es_spare(
+drop table if exists es.dw_xxfpmx_es_spare;
+create external table if not exists es.dw_xxfpmx_es_spare(
     id string,
     fplb string,
     fplbmc string,

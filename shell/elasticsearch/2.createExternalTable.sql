@@ -1,4 +1,4 @@
-create external table if not exists yh_es.dw_jxfp_es(
+create external table if not exists es.dw_jxfp_es(
     id string,
     fplb string,
     fplbmc string,
@@ -32,7 +32,7 @@ create external table if not exists yh_es.dw_jxfp_es(
 )STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'jxfp.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create external table if not exists yh_es.dw_jxfpmx_es(
+create external table if not exists es.dw_jxfpmx_es(
     id string ,
     jxfpid string,
     fplb string ,
@@ -74,7 +74,7 @@ create external table if not exists yh_es.dw_jxfpmx_es(
 STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'jxfpmx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create external table if not exists yh_es.dw_xxfp_es(
+create external table if not exists es.dw_xxfp_es(
     id string ,
     xxfpid string,
     fplb string ,
@@ -106,7 +106,7 @@ create external table if not exists yh_es.dw_xxfp_es(
 TBLPROPERTIES('es.resource' = 'xxfp.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_xxfpmx_es(
+create external table if not exists es.dw_xxfpmx_es(
     id string,
     fplb string,
     fplbmc string,
@@ -146,7 +146,7 @@ create external table if not exists yh_es.dw_xxfpmx_es(
 TBLPROPERTIES('es.resource' = 'xxfpmx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_fplyd_es(
+create external table if not exists es.dw_fplyd_es(
     id string ,
     fplb string ,
     fplbmc string ,
@@ -176,7 +176,7 @@ create external table if not exists yh_es.dw_fplyd_es(
 TBLPROPERTIES('es.resource' = 'fplyd.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create table if not exists yh_es.dw_fplyd_mx_es(
+create table if not exists es.dw_fplyd_mx_es(
     id string,
     fplb string,
     fplbmc string,
@@ -213,7 +213,7 @@ create table if not exists yh_es.dw_fplyd_mx_es(
 )STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'fplyd_mx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create external table if not exists yh_es.dw_fplxd_es(
+create external table if not exists es.dw_fplxd_es(
     id string,
     fplb string,
     fplbmc string,
@@ -241,7 +241,7 @@ create external table if not exists yh_es.dw_fplxd_es(
 )STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'fplxd.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create table if not exists yh_es.dw_fplxd_mx_es(
+create table if not exists es.dw_fplxd_mx_es(
     id string,
     fplb string,
     fplbmc string,
@@ -276,7 +276,7 @@ create table if not exists yh_es.dw_fplxd_mx_es(
 )STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'fplxd_mx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create external table if not exists yh_es.dw_hwl_jx_es(
+create external table if not exists es.dw_hwl_jx_es(
     id string,
     wpmc string,
     je decimal(16,2),
@@ -292,7 +292,7 @@ create external table if not exists yh_es.dw_hwl_jx_es(
 TBLPROPERTIES('es.resource' = 'hwl_jx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_hwl_xx_es(
+create external table if not exists es.dw_hwl_xx_es(
     id string,
     wpmc string,
     je decimal(16,2),
@@ -309,7 +309,7 @@ TBLPROPERTIES('es.resource' = 'hwl_xx.list/list','es.mapping.id' = 'id','es.batc
 
 
 
-create external table if not exists yh_es.dw_jxxcy_jx_es(
+create external table if not exists es.dw_jxxcy_jx_es(
     id string,
     wpmc string,
     je decimal(16,2),
@@ -325,7 +325,7 @@ create external table if not exists yh_es.dw_jxxcy_jx_es(
 TBLPROPERTIES('es.resource' = 'jxxcy_jx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_jxxcy_xx_es(
+create external table if not exists es.dw_jxxcy_xx_es(
     id string,
     wpmc string,
     je decimal(16,2),
@@ -342,7 +342,7 @@ TBLPROPERTIES('es.resource' = 'jxxcy_xx.list/list','es.mapping.id' = 'id','es.ba
 
 
 
- create table if not exists yh_es.dw_zgkpxe_es(
+ create table if not exists es.dw_zgkpxe_es(
     ID string,
     fplb string,
     fplbmc string,
@@ -365,7 +365,7 @@ TBLPROPERTIES('es.resource' = 'jxxcy_xx.list/list','es.mapping.id' = 'id','es.ba
 TBLPROPERTIES('es.resource' = 'zgkpxe.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');        
 
 
-create table if not exists yh_es.dw_zgkpxe_mx_es(
+create table if not exists es.dw_zgkpxe_mx_es(
     id string,
     fplb string,
     fplbmc string,
@@ -395,7 +395,7 @@ create table if not exists yh_es.dw_zgkpxe_mx_es(
 TBLPROPERTIES('es.resource' = 'zgkpxe_mx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_xxfpmxzf_es(
+create external table if not exists es.dw_xxfpmxzf_es(
     id string,
     fplb string,
     fplbmc string,
@@ -434,7 +434,7 @@ create external table if not exists yh_es.dw_xxfpmxzf_es(
 TBLPROPERTIES('es.resource' = 'xxfpmx_zf.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_xxfpzf_es(
+create external table if not exists es.dw_xxfpzf_es(
     id string ,
     xxfpid string,
     fplb string ,
@@ -465,7 +465,7 @@ create external table if not exists yh_es.dw_xxfpzf_es(
 TBLPROPERTIES('es.resource' = 'xxfp_zf.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_skfp_es(
+create external table if not exists es.dw_skfp_es(
     id string ,
     xxfpid string,
     fplb string ,
@@ -496,7 +496,7 @@ create external table if not exists yh_es.dw_skfp_es(
 )STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES('es.resource' = 'skfp.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
-create external table if not exists yh_es.dw_skfpmx_es(
+create external table if not exists es.dw_skfpmx_es(
     id string,
     fplb string,
     fplbmc string,
@@ -536,7 +536,7 @@ create external table if not exists yh_es.dw_skfpmx_es(
 TBLPROPERTIES('es.resource' = 'skfpmx.list/list','es.mapping.id' = 'id','es.batch.write.retry.count'='-1','es.nodes'='${hivevar:es_nodes}');
 
 
-create external table if not exists yh_es.dw_jxfp_zf_es(
+create external table if not exists es.dw_jxfp_zf_es(
     id string,
     fplb string,
     fplbmc string,
@@ -573,7 +573,7 @@ TBLPROPERTIES('es.resource' = 'jxfp_zf.list/list','es.mapping.id' = 'id','es.bat
 
 
 
-create external table if not exists yh_es.dw_jxfpmx_zf_es(
+create external table if not exists es.dw_jxfpmx_zf_es(
     id string ,
     jxfpid string,
     fplb string ,

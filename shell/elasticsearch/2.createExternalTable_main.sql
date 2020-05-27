@@ -1,5 +1,5 @@
-drop table if exists yh_es.dw_jxfp_es_main;
-create external table if not exists yh_es.dw_jxfp_es_main(
+drop table if exists es.dw_jxfp_es_main;
+create external table if not exists es.dw_jxfp_es_main(
     id string,
     fplb string,
     fplbmc string,
@@ -38,8 +38,8 @@ TBLPROPERTIES('es.resource' = 'jxfp_main.list/list','es.mapping.id' = 'id',
               'es.batch.write.refresh' = 'false','es.nodes.discovery' = 'true','es.nodes.client.only' = 'false'
               );
 
-drop table if exists yh_es.dw_jxfpmx_es_main;
-create external table if not exists yh_es.dw_jxfpmx_es_main(
+drop table if exists es.dw_jxfpmx_es_main;
+create external table if not exists es.dw_jxfpmx_es_main(
      id string ,
     jxfpid string,
     fplb string ,

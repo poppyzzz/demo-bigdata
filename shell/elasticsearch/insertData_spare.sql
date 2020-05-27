@@ -1,4 +1,4 @@
-insert overwrite table yh_dw.dw_jxfp_spare
+insert overwrite table es.dw_jxfp_spare
 select
         concat(nvl(t.jxfp_id,''),"x",nvl(d.sjswjg_dm,''),'') id,
         nvl(t.fp_lb,'') fplb,
@@ -40,7 +40,7 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_jxfpmx_spare
+insert overwrite table es.dw_jxfpmx_spare
 select  
 		concat(nvl(t.jxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.jxfp_id,'') jxfpid,
@@ -91,7 +91,7 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 
 
 
-insert overwrite table yh_dw.dw_xxfp_spare
+insert overwrite table es.dw_xxfp_spare
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.xxfp_id,'') xxfpid,
@@ -130,7 +130,7 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_xxfpmx_spare
+insert overwrite table es.dw_xxfpmx_spare
 select
         concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
@@ -178,7 +178,7 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 
  
 
-insert overwrite table yh_dw.dw_hwl_jx_spare
+insert overwrite table es.dw_hwl_jx_spare
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,
@@ -197,7 +197,7 @@ join    dw.dw_dm_nsr dw on t.gf_nsr_key = dw.nsr_key
 group by t.wp_mc, t.fp_lb, t.wp_dw, dw.nsrsbh, t.date_key
 ;
 
-insert overwrite table yh_dw.dw_hwl_xx_spare
+insert overwrite table es.dw_hwl_xx_spare
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,

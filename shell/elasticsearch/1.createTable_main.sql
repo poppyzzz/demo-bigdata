@@ -1,5 +1,5 @@
-drop table if exists yh_dw.dw_jxfp_main;
-create table if not exists yh_dw.dw_jxfp_main (
+drop table if exists es.dw_jxfp_main;
+create table if not exists es.dw_jxfp_main (
     id string,
     fplb string,
     fplbmc string,
@@ -32,8 +32,8 @@ create table if not exists yh_dw.dw_jxfp_main (
     wdbz string,
 	bz string
 );
-drop table if exists yh_dw.dw_jxfpmx_main;
-create table if not exists yh_dw.dw_jxfpmx_main(
+drop table if exists es.dw_jxfpmx_main;
+create table if not exists es.dw_jxfpmx_main(
     id string ,
     jxfpid string,
     fplb string ,

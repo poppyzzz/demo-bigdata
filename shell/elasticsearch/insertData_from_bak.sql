@@ -1,4 +1,4 @@
-insert overwrite table yh_dw.dw_jxfp
+insert overwrite table es.dw_jxfp_main
 select
         concat(nvl(t.jxfp_id,''),"x",nvl(d.sjswjg_dm,''),'') id,
         nvl(t.fp_lb,'') fplb,
@@ -28,8 +28,9 @@ select
         nvl(d2.nsrmc,'') nsrmc,
         nvl(d2.nsrsbh,'') nsrsbh,
         nvl(d.swjglevel,'') swjglevel,
-        nvl(t.dkbz,'') dkbz,
-        nvl(d4.wdbz,'') wdbz
+        case when (length(t.xf_nsr_key)=15) and (substr(t.xf_nsr_key,9,2)='DK') then 'Y' else 'N' end dkbz,
+        nvl(d4.wdbz,'') wdbz,
+        nvl(t.bz,'') bz
 from    ( select * from dw_bak.dw_fact_jxfp where datekey = ${hivevar:datekey} ) t
 left join    dw.dw_dim_swjg_jc d on t.gf_swjg_key = d.xjswjg_key
 join    dw.dw_fplb d3 on t.fp_lb = d3.fp_lb
@@ -40,10 +41,9 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_jxfpmx
+insert overwrite table es.dw_jxfpmx_main
 select  
-		row_number() over () as row_id,
-		concat(nvl(t.jxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
+        concat(nvl(t.jxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.jxfp_id,'') jxfpid,
         nvl(t.fp_lb,'') fplb,
         nvl(d3.fp_lb_mc,'') fplbmc,
@@ -78,9 +78,12 @@ select
         nvl(h.mldm,'') mldm,
         nvl(d.swjglevel,'') swjglevel,
         nvl(t.qdbz,'') qdbz,
-        nvl(t.dkbz,'') dkbz,
-        nvl(d4.wdbz,'') wdbz
+        case when (length(t.xf_nsr_key)=15) and (substr(t.xf_nsr_key,9,2)='DK') then 'Y' else 'N' end dkbz,
+        nvl(d4.wdbz,'') wdbz,
+        nvl(fp.skm,'') skm,
+        nvl(fp.bz,'') bz
 from    ( select * from dw_bak.dw_fact_jxfpmx where datekey = ${hivevar:datekey} ) t
+join    ( select jxfp_id,skm,bz from dw_bak.dw_fact_jxfp where datekey = ${hivevar:datekey} ) fp on fp.jxfp_id = t.jxfp_id
 join    dw.dw_fplb d3 on t.fp_lb = d3.fp_lb
 join    dw.dw_dm_nsr d2 on t.gf_nsr_key = d2.nsr_key
 left join    dw.dw_dm_nsr d6 on t.xf_nsr_key = d6.nsr_key
@@ -89,10 +92,7 @@ left join    dw.dw_dim_swjg_jc d on d.xjswjg_key = d2.swjg_key
 left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
-
-
-
-insert overwrite table yh_dw.dw_xxfp
+insert overwrite table es.dw_xxfp_spare
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.xxfp_id,'') xxfpid,
@@ -119,8 +119,11 @@ select
         nvl(h.hy_dm,'') hydm,
         nvl(h.mldm,'') mldm,
         nvl(d.swjglevel,'') swjglevel,
-        nvl(t.dkbz,'') dkbz,
-        nvl(d4.wdbz,'') wdbz
+        case when (length(t.xf_nsr_key)=15) and (substr(t.xf_nsr_key,9,2)='DK') then 'Y' else 'N' end dkbz,
+        nvl(d4.wdbz,'') wdbz,
+        nvl(substr(t.kprq,12,8),'') kpsj,
+        nvl(t.skm,'') skm,
+        nvl(t.bz,'') bz
 from    ( select * from dw_bak.dw_fact_xxfp where datekey = ${hivevar:datekey} ) t
 join    dw.dw_dm_nsr d2 on t.xf_nsr_key = d2.nsr_key
 left join    dw.dw_dm_nsr d6 on t.gf_nsr_key = d6.nsr_key
@@ -131,9 +134,8 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_xxfpmx
+insert overwrite table es.dw_xxfpmx_spare
 select
-		row_number() over () as row_id,
         concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
         nvl(d3.fp_lb_mc,'') fplbmc,
@@ -167,9 +169,13 @@ select
         nvl(h.mldm,'') mldm,
         nvl(d.swjglevel,'') swjglevel,
         nvl(t.qdbz,'') qdbz,
-        nvl(t.dkbz,'') dkbz,
-        nvl(d4.wdbz,'') wdbz
+        case when (length(t.xf_nsr_key)=15) and (substr(t.xf_nsr_key,9,2)='DK') then 'Y' else 'N' end dkbz,
+        nvl(d4.wdbz,'') wdbz,
+        nvl(substr(t.kprq,12,8),'') kpsj,
+        nvl(fp.skm,'') skm,
+        nvl(fp.bz,'') bz
 from    ( select * from dw_bak.dw_fact_xxfpmx where datekey = ${hivevar:datekey} ) t
+join    ( select xxfp_id,skm,bz from dw_bak.dw_fact_xxfp where datekey = ${hivevar:datekey} ) fp on fp.xxfp_id = t.xxfp_id
 join    dw.dw_dm_nsr d2 on t.xf_nsr_key = d2.nsr_key
 left join    dw.dw_dm_nsr d6 on t.gf_nsr_key = d6.nsr_key
 left join    dw.dw_dim_region d4 on d6.region_key = d4.region_key
@@ -179,7 +185,8 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_fplyd
+
+insert overwrite table es.dw_fplyd
 select
         concat(nvl(t.jxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
@@ -216,7 +223,7 @@ join  dw.dw_dim_hy h on h.hy_key = d6.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_fplyd_mx
+insert overwrite table es.dw_fplyd_mx
 select  concat(nvl(t.jxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
         nvl(d3.fp_lb_mc,'') fplbmc,
@@ -261,7 +268,7 @@ join    dw.dw_dim_hy h on h.hy_key = d6.hy_key
 
 
 
-insert overwrite table yh_dw.dw_fplxd
+insert overwrite table es.dw_fplxd
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
@@ -298,7 +305,7 @@ join    dw.dw_dim_hy h on h.hy_key = d6.hy_key
 
 
 
-insert overwrite table yh_dw.dw_fplxd_mx
+insert overwrite table es.dw_fplxd_mx
 select  concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
         nvl(d3.fp_lb_mc,'') fplbmc,
@@ -340,7 +347,7 @@ join    dw.dw_dim_hy h on h.hy_key = d6.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_hwl_jx
+insert overwrite table es.dw_hwl_jx_spare
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,
@@ -359,7 +366,7 @@ join    dw.dw_dm_nsr dw on t.gf_nsr_key = dw.nsr_key
 group by t.wp_mc, t.fp_lb, t.wp_dw, dw.nsrsbh, t.date_key
 ;
 
-insert overwrite table yh_dw.dw_hwl_xx
+insert overwrite table es.dw_hwl_xx_spare
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,
@@ -379,7 +386,7 @@ group by t.wp_mc, t.fp_lb, t.wp_dw, dw.nsrsbh, t.date_key
 ;
 
 
-insert overwrite table yh_dw.dw_jxxcy_jx
+insert overwrite table es.dw_jxxcy_jx
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,
@@ -398,7 +405,7 @@ join    dw.dw_dm_nsr dw on t.gf_nsr_key = dw.nsr_key
 group by t.wp_mc, t.fp_lb, t.wp_dw, dw.nsrsbh, t.date_key
 ;
 
-insert overwrite table yh_dw.dw_jxxcy_xx
+insert overwrite table es.dw_jxxcy_xx
 select
         concat(nvl(dw.nsrsbh,''),'x',nvl(t.date_key,''),'x',nvl(t.fp_lb,''),'x',nvl(t.wp_mc,''),'x',nvl(t.wp_dw,'')) id ,
         nvl(t.wp_mc,'') wpmc,
@@ -418,7 +425,7 @@ group by t.wp_mc, t.fp_lb, t.wp_dw, dw.nsrsbh, t.date_key
 ;
 
 
-insert overwrite table yh_dw.dw_zgkpxe
+insert overwrite table es.dw_zgkpxe
 select
         nvl(d3.xxfp_id ,'')id,
         nvl(a.fp_lb,'') fplb,
@@ -445,7 +452,7 @@ join    ( select * from dw_bak.dw_fact_xxfp where datekey = ${hivevar:datekey} )
 ;
 
 
-insert overwrite table yh_dw.dw_zgkpxe_mx
+insert overwrite table es.dw_zgkpxe_mx
 select
         concat(nvl(d3.xxfpmx_key,'')) id ,
         nvl(a.fp_lb ,'')  fplb,
@@ -479,7 +486,7 @@ join    dw.dw_dm_nsr d2 on a.xf_nsrsbh = d2.nsrsbh
 ;
 
 
-insert overwrite table yh_dw.dw_xxfp_zf
+insert overwrite table es.dw_xxfp_zf
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.xxfp_id,'') xxfpid,
@@ -488,7 +495,7 @@ select
         nvl(t.fpdm,'') fpdm,
         nvl(t.fphm,'') fphm,
         nvl(t.kprq,'') kprq,
-	nvl(t.zfsj,'') zfsj,
+    nvl(t.zfsj,'') zfsj,
         nvl(t.gf_nsrsbh,'') gfnsrsbh,
         nvl(t.gf_nsrmc,'') gfnsrmc,
         nvl(t.xf_nsrsbh,'') xfnsrsbh,
@@ -518,7 +525,7 @@ join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 
 
 
-insert overwrite table yh_dw.dw_xxfpmx_zf
+insert overwrite table es.dw_xxfpmx_zf
 select
         concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
@@ -526,7 +533,7 @@ select
         nvl(t.fpdm,'') fpdm,                      
         nvl(t.fphm,'') fphm,                      
         nvl(t.kprq,'') kprq, 
-	nvl(t.zfsj,'') zfsj,                     
+    nvl(t.zfsj,'') zfsj,                     
         nvl(t.gf_nsrsbh,'') gfnsrsbh,             
         nvl(t.gf_nsrmc,'') gfnsrmc,               
         nvl(t.xf_nsrsbh,'') xfnsrsbh,             
@@ -563,7 +570,7 @@ join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_skfp
+insert overwrite table es.dw_skfp
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.xxfp_id,'') xxfpid,
@@ -601,7 +608,7 @@ join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_skfpmx
+insert overwrite table es.dw_skfpmx
 select
         concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,
@@ -648,7 +655,7 @@ join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_jxfp_zf
+insert overwrite table es.dw_jxfp_zf
 select
         concat(nvl(t.jxfp_id,''),"x",nvl(d.sjswjg_dm,''),'') id,
         nvl(t.fp_lb,'') fplb,
@@ -694,7 +701,7 @@ join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 
 
 
-insert overwrite table yh_dw.dw_jxfpmx_zf
+insert overwrite table es.dw_jxfpmx_zf
 select  concat(nvl(t.jxfpmx_key,''),"x",nvl(t.wp_mc,''),"x",nvl(t.wp_xh,''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.jxfp_id,'') jxfpid,
         nvl(t.fp_lb,'') fplb,
@@ -744,4 +751,5 @@ join    dw.dw_dim_swjg_jc d on d.xjswjg_key = d2.swjg_key
 join    dw.dw_fplb d3 on t.fp_lb = d3.fp_lb
 join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
+
 

@@ -1,4 +1,4 @@
-insert overwrite table yh_dw.dw_xxfp_main
+insert overwrite table es.dw_xxfp_main
 select
         concat(nvl(t.xxfp_id,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.xxfp_id,'') xxfpid,
@@ -40,7 +40,7 @@ left join    dw.dw_dim_hy h on h.hy_key = d2.hy_key
 ;
 
 
-insert overwrite table yh_dw.dw_xxfpmx_main
+insert overwrite table es.dw_xxfpmx_main
 select
         concat(nvl(t.xxfpmx_key,''),"x",nvl(hash(t.wp_mc),''),"x",nvl(hash(t.wp_xh),''),"x",nvl(t.wp_dw,''),"x",nvl(d.sjswjg_dm,'')) id,
         nvl(t.fp_lb,'') fplb,

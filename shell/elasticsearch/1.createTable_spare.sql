@@ -1,5 +1,5 @@
-drop table if exists yh_dw.dw_xxfp_spare;
-create table if not exists yh_dw.dw_xxfp_spare
+drop table if exists es.dw_xxfp_spare;
+create table if not exists es.dw_xxfp_spare
 (
     id string ,
     xxfpid string,
@@ -33,8 +33,8 @@ create table if not exists yh_dw.dw_xxfp_spare
 	bz string
 );
 
-drop table if exists yh_dw.dw_xxfpmx_spare;
-create table if not exists yh_dw.dw_xxfpmx_spare(
+drop table if exists es.dw_xxfpmx_spare;
+create table if not exists es.dw_xxfpmx_spare(
     id string,
     fplb string,
     fplbmc string,
